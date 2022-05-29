@@ -22,7 +22,7 @@ function Step1() {
     }, [])
 
 
-    function nextPage() {
+    async function nextPage() {
         togglePage?.(2)
         changeData?.({ ...data, step1: [height, weight] })
     }

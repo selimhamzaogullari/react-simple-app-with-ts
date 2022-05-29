@@ -4,7 +4,9 @@
         "back": "Back",
         "save": "Save",
         "english": "English",
-        "arabic": "Arabic"
+        "arabic": "Arabic",
+        "saveInfo": "Your information has been saved",
+        "saveInfoFail": "Your information could not be saved."
     },
     "step1": {
         "description": "Let’s hear more about you to prepare your personal workout plan",

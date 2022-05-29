@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MainContext } from '../context';
 import Button from './Button';
 import Input from './Input';
+import service from '../services/service'
 
 
 function Step4() {
@@ -25,14 +26,36 @@ function Step4() {
         }
     }, [])
 
-    function nextPage() {
-        togglePage?.(4)
+    async function nextPage() {
         changeData?.({ ...data, step4: { name, surname, email, password } })
+        saveAll(data)
     }
 
     function prevPage() {
         togglePage?.(3)
         changeData?.({ ...data, step4: { name, surname, email, password } })
+    }
+
+    async function saveAll(obj: { step1: Array<string>, step2: Array<any>, step3: Array<any> }) {
+        const checkedDays = obj.step2.filter(x => x.check).map(x => x.name)
+        const checkedGoal = obj.step3.find(x => x.check)
+        const serviceObj = {
+            height: obj.step1[0],
+            weight: obj.step1[1],
+            days: checkedDays,
+            goal: checkedGoal.name,
+            userInfo: { name, surname, email, password }
+        }
+
+        const res = await service.saveInfos(serviceObj)
+        if (res) {
+            alert(t('global.saveInfo'))
+            changeData?.({})
+            togglePage?.(1)
+        } else {
+            alert(t('global.fail'))
+        }
+
     }
 
     return (
