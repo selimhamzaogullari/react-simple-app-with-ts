@@ -1,0 +1,11 @@
+{
+    "global": {
+        "next": "Next",
+        "back": "Back"
+    },
+    "step1": {
+        "description": "Let’s hear more about you to prepare your personal workout plan",
+        "yourHeight": "Your height",
+        "yourWeight": "Your weight"
+    }
+}
