@@ -1,11 +1,37 @@
 {
     "global": {
         "next": "Next",
-        "back": "Back"
+        "back": "Back",
+        "save": "Save",
+        "english": "English",
+        "arabic": "Arabic"
     },
     "step1": {
         "description": "Let’s hear more about you to prepare your personal workout plan",
         "yourHeight": "Your height",
         "yourWeight": "Your weight"
+    },
+    "step2": {
+        "description": "Pick your workout days",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+    },
+    "step3": {
+        "description": "What is your fitness goal?",
+        "loseWeight": "Lose weight",
+        "buildMuscle": "Build Muscle",
+        "stayHealth": "Stay Health"
+    },
+    "step4": {
+        "description": "Final step. Complete your registration",
+        "name": "Name",
+        "surname": "Surname",
+        "email": "E-mail",
+        "password": "Password"
     }
 }

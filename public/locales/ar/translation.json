@@ -1,11 +1,37 @@
 {
     "global": {
         "next": "التالي",
-        "back": "خلف"
+        "back": "خلف",
+        "save": "خطة",
+        "english": "خطة",
+        "arabic": "طولك"
     },
     "step1": {
         "description": "دعنا نسمع المزيد عنك لإعداد خطة التمرين الشخصية الخاصة بك",
         "yourHeight": "طولك",
         "yourWeight": "وزنك"
+    },
+    "step2": {
+        "description": "دعنا نسمع المزيد",
+        "monday": "دعنا",
+        "tuesday": "عنك",
+        "wednesday": "المزيد",
+        "thursday": "عنك",
+        "friday": "خطة",
+        "saturday": "الخاصة",
+        "sunday": "بك"
+    },
+    "step3": {
+        "description": "المزيد الشخصية بك",
+        "loseWeight": "بك عنك",
+        "buildMuscle": "بك عنك",
+        "stayHealth": "بك الخاصة"
+    },
+    "step4": {
+        "description": "دعنا نسمع المزيد عنك لإعداد خطة",
+        "name": "المزيد الشخصية بك",
+        "surname": "بك عنك",
+        "email": "بك عنك",
+        "password": "بك الخاصة"
     }
 }

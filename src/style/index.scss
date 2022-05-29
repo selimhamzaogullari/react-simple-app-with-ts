@@ -6,6 +6,9 @@ $color-text-bold: #183137;
 $color-btn: #4140E6;
 $color-btn-disabled: #D0CFFF;
 $color-white: #FFFFFF;
+$color-border: #9B9BEB;
+$color-checkbox: #5453E3;
+$color-checkbox-border: #E3E8E9;
 
 $size-text: 16px;
 $size-text-lg: 20px;
@@ -18,16 +21,97 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// padding and margin
+@for $i from 1 through 8 {
+  .m-#{$i*5} {
+    margin: #{$i*5}px;
+  }
+
+  .mb-#{$i*5} {
+    margin-bottom: #{$i*5}px;
+  }
+
+  .mt-#{$i*5} {
+    margin-top: #{$i*5}px;
+  }
+
+  .ml-#{$i*5} {
+    margin-left: #{$i*5}px;
+  }
+
+  .mr-#{$i*5} {
+    margin-right: #{$i*5}px;
+  }
+
+  .p-#{$i*5} {
+    padding: #{$i*5}px;
+  }
+
+  .pb-#{$i*5} {
+    padding-bottom: #{$i*5}px;
+  }
+
+  .pt-#{$i*5} {
+    padding-top: #{$i*5}px;
+  }
+
+  .pl-#{$i*5} {
+    padding-left: #{$i*5}px;
+  }
+
+  .pr-#{$i*5} {
+    padding-right: #{$i*5}px;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
 .container {
+  position: relative;
   margin: auto;
-  width: 1180px;
+  max-width: 1180px;
   padding: 20px;
   font-size: $size-text;
   color: $color-text;
 
+  button {
+    color: $color-white;
+    background-color: $color-btn;
+    border: none;
+    width: 170px;
+    font-size: $size-text;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &.small {
+      width: 75px;
+      padding: 6px 10px;
+      margin: 0 5px;
+
+    }
+
+    &:disabled {
+      background-color: $color-btn-disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  .change-language {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+  }
+
   .box {
-    width: 373px;
-    height: 395px;
+    max-width: 373px;
+    height: 495px;
     margin: auto;
     background-color: $color-box;
     padding: 48px;
@@ -55,28 +139,65 @@ body {
           margin-top: 10px;
         }
       }
+
+      .select-day {
+        width: calc(100% - 40px);
+        padding: 12px 20px;
+        background-color: $color-white;
+        text-align: left;
+        color: $color-text-bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-border;
+        }
+
+        &.disabled {
+          opacity: .6;
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+
+        &.height-lg {
+          padding: 33px 20px;
+        }
+
+        .checkbox {
+          width: 19px;
+          height: 19px;
+          border-radius: 50%;
+          border: 1px solid $color-checkbox-border;
+
+          &.check {
+            width: 20px;
+            height: 20px;
+            border: none;
+            background-color: $color-checkbox;
+            position: relative;
+
+            &:after {
+              content: '';
+              position: absolute;
+              left: 7px;
+              top: 7px;
+              width: 6px;
+              height: 6px;
+              background-color: $color-white;
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+
     }
 
     .bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      button {
-        color: $color-white;
-        background-color: $color-btn;
-        border: none;
-        width: 170px;
-        font-size: $size-text;
-        padding: 12px 20px;
-        cursor: pointer;
-        border-radius: 4px;
-
-        &:disabled {
-          background-color: $color-btn-disabled;
-          cursor: not-allowed;
-        }
-      }
     }
   }
 }
