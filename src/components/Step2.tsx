@@ -24,7 +24,7 @@ function Step2() {
     useEffect(() => {
         console.log(data?.hasOwnProperty('step2'))
         let arr = data?.hasOwnProperty('step2') ? data.step2 : days
-        if (data.step1[0] / data.step1[1] > 0.5) {
+        if (data.step1[1] / data.step1[2] > 0.5) {
             arr[1].disabled = true
             arr[3].disabled = true
             arr[4].disabled = true

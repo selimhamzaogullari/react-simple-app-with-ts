@@ -7,7 +7,7 @@ function Input({ id, placeHolder, firstValue, allowOnlyNumber = false, type = 't
         setVar(e.target.value)
     }
     return (
-        <input type={type} id={id} name="salary"
+        <input type={type} id={id} name={id} autoComplete="off"
             value={firstValue}
             onChange={checkInput}
             placeholder={placeHolder} />

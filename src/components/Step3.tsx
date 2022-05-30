@@ -50,9 +50,9 @@ function Step3() {
             <div className="content">
                 {goal.map((g, index) => (
                     <div className="select-day height-lg" key={g.name} onClick={() => selectGoal(index)}>
-                        <div className="d-flex align-items-center">
+                        <div className="select-goal d-flex align-items-center">
                             <img src={g.icon} alt={`icon-${g.name}`} />
-                            <span className="ml-15">{t(`step3.${g.name}`)}</span>
+                            <span>{t(`step3.${g.name}`)}</span>
                         </div>
                         <div className={`checkbox ${g.check && 'check'}`} />
                     </div>

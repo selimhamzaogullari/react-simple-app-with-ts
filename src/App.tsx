@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useEffect, useState, } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from './components/Button';
 import Step1 from './components/Step1';
@@ -14,6 +14,12 @@ function App() {
   const [page, setPage] = useState<Number>(1)
   const [data, setData] = useState({})
 
+  useEffect(() => {
+    i18n.changeLanguage('en')
+    document.getElementsByTagName('html')[0].setAttribute('dir', 'ltr')
+    document.body.style.direction = "ltr";
+  }, [])
+
   const togglePage = (newPage: Number) => {
     setPage(newPage)
   }
@@ -24,17 +30,17 @@ function App() {
   function changeLanguage(lang: string) {
     i18n.changeLanguage(lang)
     document.getElementsByTagName('html')[0].setAttribute('dir', lang === 'ar' ? "rtl" : "ltr")
-    // document.body.style.direction = lang === 'ar' ? "rtl" : "ltr";
+    document.body.style.direction = lang === 'ar' ? "rtl" : "ltr";
   }
 
   return (
     <MainContext.Provider value={{ page, togglePage, data, changeData }}>
       <div className="App">
+        <div className="change-language">
+          <Button small={true} setPage={() => changeLanguage('en')}>{t('global.english')}</Button>
+          <Button small={true} setPage={() => changeLanguage('ar')}>{t('global.arabic')}</Button>
+        </div>
         <div className="container">
-          <div className="change-language">
-            <Button small={true} setPage={() => changeLanguage('en')}>{t('global.english')}</Button>
-            <Button small={true} setPage={() => changeLanguage('ar')}>{t('global.arabic')}</Button>
-          </div>
           <div className="box">
             {page === 1 ? (
               <Step1 />
